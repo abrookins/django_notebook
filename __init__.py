@@ -1,5 +1,8 @@
 
-import settings
+try:
+    import settings
+    import django.core.management
+    django.core.management.setup_environ(settings)
+except ImportError:
+    pass
 
-import django.core.management
-django.core.management.setup_environ(settings)
